@@ -6,7 +6,7 @@
 [![contact: @lexkraev](https://img.shields.io/badge/contact-%40lexkraev-blue.svg?style=flat)](https://t.me/lexkraev)
 [![Telegram Group](https://img.shields.io/endpoint?color=neon&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fswiftui_dev)](https://telegram.dog/swiftui_dev)
 
-Binary Framework as Swift Package with YooKassaPayments.
+Binary Framework as Swift Package with [YooKassaPayments](https://git.yoomoney.ru/projects/SDK/repos/yookassa-payments-swift).
 
 ## Requirements
 
