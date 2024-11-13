@@ -10,29 +10,35 @@ let package = Package(
     products: [
         .library(
             name: "YooKassaPayments",
-            targets: ["YooKassaPayments"])
+            targets: ["YooKassaPaymentsTarget"])
     ],
 //    dependencies: [
 //        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMajor(from: "5.8.0")),
 //    ],
     targets: [
-//        .target(
-//            name: "YooKassaPaymentsTarget",
-//            dependencies: [
-////                .target(name: "YooKassaPaymentsWrapper")
-//                .target(name: "YooKassaPaymentsBinary"),
-//                .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios")
-//            ],
-//            path: "SwiftPM-PlatformExclude/YooKassaPaymentsWrap"
-//        ),
-//        .target(
-//            name: "YooKassaPaymentsWrapper",
-//            dependencies: [
-//                .target(name: "YooKassaPaymentsBinary"),
-//                .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios")
-//            ],
-//            path: "YooKassaPaymentsWrapper"
-//        ),
+        .target(
+            name: "YooKassaPaymentsTarget",
+            dependencies: [
+                .target(name: "YooKassaPaymentsWrapper")
+            ],
+            path: "SwiftPM-PlatformExclude/YooKassaPaymentsWrap"
+        ),
+        .target(
+            name: "YooKassaPaymentsWrapper",
+            dependencies: [
+                .target(name: "YooKassaPayments"),
+                .target(name: "YooMoneyUI"),
+                .target(name: "FMobileSdk"),
+                .target(name: "FunctionalSwift"),
+                .target(name: "MoneyAuth"),
+                .target(name: "SPaySdk"),
+                .target(name: "YooKassaPaymentsApi"),
+                .target(name: "YooKassaWalletApi"),
+                .target(name: "YooMoneyCoreApi"),
+                .target(name: "YooMoneySessionProfiler")
+            ],
+            path: "YooKassaPaymentsWrapper"
+        ),
         .binaryTarget(
             name: "YooKassaPayments",
             url: "https://github.com/c-villain/YooKassaPayments/releases/download/7.2.0/YooKassaPayments.xcframework.zip",
